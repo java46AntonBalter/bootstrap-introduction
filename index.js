@@ -8,11 +8,11 @@ function alert(i, j){
     note.classList.add("alert-dismissible");
     note.classList.add("fade");
     note.classList.add("show");
-    note.classList.add("justify-content-center")
-    note.classList.add("align-items-start")
+    note.classList.add("mx-auto")
     note.setAttribute("role", "alert");
+    note.setAttribute("width", "200px");
     const notePara = document.createElement("p");
-    notePara.setAttribute("style", "font-size:2vw;")
+    notePara.setAttribute("style", "font-size:1.7vw;")
     const noteText = document.createTextNode(`${String.fromCharCode(j)} ${i}`);
     note.appendChild(notePara);
     notePara.appendChild(noteText);
