@@ -31,7 +31,3 @@ function alert(i, j){
         });
         
 }
-const listner = function (event) {
-    event.preventDefault();
-    alert(i,j);
-}
