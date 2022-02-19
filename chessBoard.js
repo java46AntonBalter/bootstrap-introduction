@@ -1,4 +1,3 @@
-
 class ChessBoard {
     constructor(parentElem, clickFn) {
         this.parentElem = document.getElementById(parentElem);
@@ -15,6 +14,7 @@ class ChessBoard {
             for (let j = 64; j < 74; j++) {
                 const  column = document.createElement("div");
                 column.classList.add("col");
+                column.classList.add("g-0");
                 if(((i == 0) && (j == 64)) || ((i == 9) && (j == 64)) || ((i == 0) && (j == 73)) || ((i == 9) && (j == 73))){
                     row.appendChild(column);
                 } else if((i == 0) && (j > 64) && (j < 73)) {
@@ -59,12 +59,12 @@ class ChessBoard {
                     column.classList.add("border");
                     column.id = `${String.fromCharCode(j)}${i}`;
                     row.appendChild(column);
+                    ((i+j) % 2 != 0) && column.classList.add("bg-dark");
                     document.getElementById(`${String.fromCharCode(j)}${i}`).addEventListener("click", function(event) {
                         event.preventDefault();
                         alert(i,j);
                         });
-                    ((i+j) % 2 != 0) && column.classList.add("bg-dark");
-                }    
+                }        
             }            
         }
     }

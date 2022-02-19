@@ -8,11 +8,12 @@ function alert(i, j){
     note.classList.add("alert-dismissible");
     note.classList.add("fade");
     note.classList.add("show");
-    note.classList.add("mx-auto")
+    note.classList.add("g-0")
+    note.classList.add("p-0")
+    note.classList.add("m-0")
     note.setAttribute("role", "alert");
-    note.setAttribute("width", "200px");
     const notePara = document.createElement("p");
-    notePara.setAttribute("style", "font-size:1.7vw;")
+    notePara.setAttribute("style", "font-size:2vw;")
     const noteText = document.createTextNode(`${String.fromCharCode(j)} ${i}`);
     note.appendChild(notePara);
     notePara.appendChild(noteText);
@@ -21,13 +22,16 @@ function alert(i, j){
     const closeBtn = document.createElement("button");
     closeBtn.setAttribute("type", "button");
     closeBtn.classList.add("btn-close");
+    closeBtn.classList.add("g-0")
+    closeBtn.classList.add("p-0")
+    closeBtn.classList.add("m-0")
     closeBtn.setAttribute("aria-label", "Close");
     document.getElementById(`${String.fromCharCode(j)}${i}note`).appendChild(closeBtn);
     closeBtn.id = `${String.fromCharCode(j)}${i}close`;
     document.getElementById(`${String.fromCharCode(j)}${i}close`).addEventListener("click", function(event) {        
         event.preventDefault();
         event.stopPropagation();
-        document.getElementById(`${String.fromCharCode(j)}${i}note`).remove();
+        document.getElementById(`${String.fromCharCode(j)}${i}note`).remove();        
         });
         
 }
