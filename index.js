@@ -33,5 +33,10 @@ function alert(i, j){
         event.stopPropagation();
         document.getElementById(`${String.fromCharCode(j)}${i}note`).remove();        
         });
+    document.getElementById(`${String.fromCharCode(j)}${i}note`).addEventListener("click", function(event) {        
+        event.preventDefault();
+        event.stopPropagation();
+        document.getElementById(`${String.fromCharCode(j)}${i}note`).remove();        
+        });        
         
 }
